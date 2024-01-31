@@ -69,9 +69,11 @@ export const reduce = <T>(
 // }
 
 export const intersection = <T>(...arrays: T[][]): T[] => {
-	return arrays.reduce((acc, curr) => {
+	const reducer = (acc: T[], curr: T[]) => {
 		return curr.filter(el => acc.includes(el))
-	})
+	}
+
+	return arrays.reduce(reducer)
 }
 
 // Challenge 8
