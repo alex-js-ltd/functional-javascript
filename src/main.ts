@@ -36,7 +36,7 @@ export const map = <T>(array: Array<T>, callback: (item: T) => T) => {
 console.log(map([1, 2, 3], addTwo))
 
 // Challenge 4
-const forEach = <T>(array: Array<T>, callback: (item: T) => void) => {
+export const forEach = <T>(array: Array<T>, callback: (item: T) => void) => {
 	for (let el of array) {
 		callback(el)
 	}
