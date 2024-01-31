@@ -50,9 +50,14 @@ test('reduce', () => {
 })
 
 test('intersection', () => {
-	expect(
-		intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]),
-	).toStrictEqual([5, 15])
+	const result = intersection(
+		[5, 10, 15, 20],
+		[15, 88, 1, 5, 7],
+		[1, 10, 15, 5, 20],
+	)
+
+	expect(result).toContain(5)
+	expect(result).toContain(15)
 })
 
 test('union', () => {

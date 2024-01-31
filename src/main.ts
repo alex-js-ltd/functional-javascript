@@ -39,8 +39,6 @@ export const mapWith = <T>(array: Array<T>, callback: (item: T) => T) => {
 	return mappedArray
 }
 
-console.log(mapWith([1, 2, 3], addTwo))
-
 // Challenge 6
 export const reduce = <T>(
 	array: Array<T>,
@@ -56,28 +54,38 @@ export const reduce = <T>(
 }
 
 // Challenge 7
-export const intersection = <T>(...arrays: Array<Array<T>>): Array<T> => {
-	const firstArray = arrays[0]
-	const newArray: Array<T> = []
+// export const intersection = <T>(...arrays: Array<Array<T>>): Array<T> => {
+// 	const firstArray = arrays[0]
+// 	const newArray: Array<T> = []
 
-	for (let i = 0; i < firstArray.length; i++) {
-		const el = firstArray[i]
-		if (arrays.every(arr => arr.includes(el))) {
-			newArray.push(el)
-		}
-	}
+// 	for (let i = 0; i < firstArray.length; i++) {
+// 		const el = firstArray[i]
+// 		if (arrays.every(arr => arr.includes(el))) {
+// 			newArray.push(el)
+// 		}
+// 	}
 
-	return newArray
+// 	return newArray
+// }
+
+export const intersection = <T>(...arrays: T[][]): T[] => {
+	return arrays.reduce((acc, curr) => {
+		return curr.filter(el => acc.includes(el))
+	})
 }
 
+console.log(
+	intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]),
+)
+
 // Challenge 8
-export const union = <T>(...arrays: Array<Array<T>>): Array<T> => {
+export const union = <T>(...arrays: T[][]): T[] => {
 	const start = arrays[0]
 
-	const callback = (acc: Array<T>, current: Array<T>): Array<T> => {
+	const reducer = (acc: Array<T>, current: Array<T>): Array<T> => {
 		const newElements = current.filter(el => !acc.includes(el))
 		return [...acc, ...newElements]
 	}
 
-	return arrays.reduce(callback, start)
+	return arrays.reduce(reducer, start)
 }
