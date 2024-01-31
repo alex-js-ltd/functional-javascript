@@ -74,18 +74,12 @@ export const intersection = <T>(...arrays: T[][]): T[] => {
 	})
 }
 
-console.log(
-	intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]),
-)
-
 // Challenge 8
 export const union = <T>(...arrays: T[][]): T[] => {
-	const start = arrays[0]
-
-	const reducer = (acc: Array<T>, current: Array<T>): Array<T> => {
+	const reducer = (acc: T[], current: T[]): T[] => {
 		const newElements = current.filter(el => !acc.includes(el))
 		return [...acc, ...newElements]
 	}
 
-	return arrays.reduce(reducer, start)
+	return arrays.reduce(reducer)
 }
