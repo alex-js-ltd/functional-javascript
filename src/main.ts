@@ -86,25 +86,38 @@ export const union = <T>(...arrays: T[][]): T[] => {
 	return arrays.reduce(reducer)
 }
 
-const multiplyBy2 = (x: number) => x * 2
-const add3 = (x: number) => x + 3
-const divideBy5 = (x: number) => x / 5
+// const multiplyBy2 = (x: number) => x * 2
+// const add3 = (x: number) => x + 3
+// const divideBy5 = (x: number) => x / 5
 
-const reduceFn = <T>(
-	array: T[],
-	howToCombine: Function,
-	buildingUp: number,
-) => {
-	for (let i = 0; i < array.length; i++) {
-		buildingUp = howToCombine(buildingUp, array[i])
-	}
+// const reduceFn = <T>(
+// 	array: T[],
+// 	howToCombine: Function,
+// 	buildingUp: number,
+// ) => {
+// 	for (let i = 0; i < array.length; i++) {
+// 		buildingUp = howToCombine(buildingUp, array[i])
+// 	}
 
-	return buildingUp
-}
+// 	return buildingUp
+// }
 
-const runFunctionOnInput = <T>(input: T, fn: Function) => {
-	return fn(input)
-}
+// const runFunctionOnInput = <T>(input: T, fn: Function) => {
+// 	return fn(input)
+// }
 
-const output = reduceFn([multiplyBy2, add3, divideBy5], runFunctionOnInput, 11)
-console.log(output)
+// const output = reduceFn([multiplyBy2, add3, divideBy5], runFunctionOnInput, 11)
+// console.log(output)
+
+const multiplyBy2 = x => x * 2
+const add3 = x => x + 3
+const divideBy5 = x => x / 5
+
+const functionsArray = [multiplyBy2, add3, divideBy5]
+const initialValue = 11 // Updated initial value
+
+const result = functionsArray.reduce((accumulator, currentFunction) => {
+	return currentFunction(accumulator)
+}, initialValue)
+
+console.log(result)
