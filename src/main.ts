@@ -16,7 +16,7 @@ export const addS = (word: string) => {
 }
 
 // Challenge 3
-export const map = <T>(array: Array<T>, callback: (item: T) => T) => {
+export const map = <T>(array: T[], callback: (item: T) => T) => {
 	const mappedArray = []
 	for (let el of array) {
 		mappedArray.push(callback(el))
@@ -26,15 +26,15 @@ export const map = <T>(array: Array<T>, callback: (item: T) => T) => {
 }
 
 // Challenge 4
-export const forEach = <T>(array: Array<T>, callback: (item: T) => void) => {
+export const forEach = <T>(array: T[], callback: (item: T) => void) => {
 	for (let el of array) {
 		callback(el)
 	}
 }
 
 // Challenge 5
-export const mapWith = <T>(array: Array<T>, callback: (item: T) => T) => {
-	const mappedArray: Array<T> = []
+export const mapWith = <T>(array: T[], callback: (item: T) => T) => {
+	const mappedArray: T[] = []
 	forEach(array, el => mappedArray.push(callback(el)))
 	return mappedArray
 }
@@ -85,3 +85,26 @@ export const union = <T>(...arrays: T[][]): T[] => {
 
 	return arrays.reduce(reducer)
 }
+
+const multiplyBy2 = (x: number) => x * 2
+const add3 = (x: number) => x + 3
+const divideBy5 = (x: number) => x / 5
+
+const reduceFn = <T>(
+	array: T[],
+	howToCombine: Function,
+	buildingUp: number,
+) => {
+	for (let i = 0; i < array.length; i++) {
+		buildingUp = howToCombine(buildingUp, array[i])
+	}
+
+	return buildingUp
+}
+
+const runFunctionOnInput = <T>(input: T, fn: Function) => {
+	return fn(input)
+}
+
+const output = reduceFn([multiplyBy2, add3, divideBy5], runFunctionOnInput, 11)
+console.log(output)
