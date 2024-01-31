@@ -24,7 +24,7 @@ console.log(addS('pizza'))
 console.log(addS('bagel'))
 
 // Challenge 3
-const map = <T>(array: Array<T>, callback: (item: T) => T) => {
+export const map = <T>(array: Array<T>, callback: (item: T) => T) => {
 	const newArray: Array<T> = []
 	for (let el of array) {
 		newArray.push(callback(el))
