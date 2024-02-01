@@ -8,9 +8,9 @@
 // console.log(commutative(multBy3, subtract5, 10)); // should log: false
 // console.log(commutative(divBy4, subtract5, 48)); // should log: false
 
-type Fun = (n: number) => number
+type Fn = (n: number) => number
 
-export const commutative = (func1: Fun, func2: Fun, value: number) => {
+export const commutative = (func1: Fn, func2: Fn, value: number) => {
 	const functionsArray = [func1, func2]
 	const accStart = value
 
