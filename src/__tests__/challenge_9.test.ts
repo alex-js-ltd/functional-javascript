@@ -8,12 +8,5 @@ test('objOfMatches', () => {
 		(str: string) => str.toUpperCase(),
 	)
 
-	expect(myObject).toHaveProperty('hi')
-	expect(myObject).toHaveProperty('bye')
-	expect(myObject).toHaveProperty('later')
-
-	// Check if the values are correct
-	expect(myObject.hi).toBe('HI')
-	expect(myObject.bye).toBe('BYE')
-	expect(myObject.later).toBe('LATER')
+	expect(myObject).toEqual({ hi: 'HI', bye: 'BYE', later: 'LATER' })
 })
