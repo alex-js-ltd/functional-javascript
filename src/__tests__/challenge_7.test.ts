@@ -1,5 +1,4 @@
 import { expect, test } from 'vitest'
-
 import { intersection } from '../challenge_7'
 
 test('intersection', () => {

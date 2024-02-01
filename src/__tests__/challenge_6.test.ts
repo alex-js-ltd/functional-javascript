@@ -1,5 +1,4 @@
 import { expect, test } from 'vitest'
-
 import { reduce } from '../challenge_6'
 
 test('reduce', () => {

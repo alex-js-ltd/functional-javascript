@@ -1,5 +1,4 @@
 import { expect, test } from 'vitest'
-
 import { union } from '../challenge_8'
 
 test('union', () => {

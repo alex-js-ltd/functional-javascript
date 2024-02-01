@@ -1,5 +1,4 @@
 import { expect, test } from 'vitest'
-
 import { objOfMatches } from '../challenge_9'
 
 test('objOfMatches', () => {
