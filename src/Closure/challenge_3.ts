@@ -4,11 +4,11 @@
 
 export const outer = () => {
 	let counter = 0 // this variable is outside incrementCounter's scope
-	const incrementCounter = () => {
+
+	return () => {
 		counter++
 		console.log('counter', counter)
 	}
-	return incrementCounter
 }
 
 // Uncomment each of these lines one by one.
