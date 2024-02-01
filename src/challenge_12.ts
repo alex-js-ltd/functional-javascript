@@ -12,13 +12,16 @@ export const objFilter = (
 	obj: { [key: string]: number },
 	callback: Function,
 ) => {
-	const newObj: { [key: string]: number } = {}
+	const keys = Object.keys(obj)
 
-	Object.keys(obj).forEach(key => {
-		if (callback(key) === obj[key]) {
-			newObj[key] = obj[key]
+	const accStart: { [key: string]: number } = {}
+
+	const output = keys.reduce((acc, curr) => {
+		if (callback(curr) === obj[curr]) {
+			acc[curr] = obj[curr]
 		}
-	})
+		return acc
+	}, accStart)
 
-	return newObj
+	return output
 }
