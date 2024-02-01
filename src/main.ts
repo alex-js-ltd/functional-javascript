@@ -1,3 +1,4 @@
-import { addTwo } from './add-two'
+import { addTwo } from './challenge_1'
+import { addS } from './challenge_2'
 
-export { addTwo }
+export { addTwo, addS }
