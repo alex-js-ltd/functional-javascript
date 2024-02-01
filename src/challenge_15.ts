@@ -18,11 +18,11 @@ export const highestFunc = <T>(
 	const accStart = keys[0]
 
 	const output = keys.reduce((acc, curr) => {
-		const nextValue = objOfFuncs[curr](subject)
-
 		const accValue = objOfFuncs[acc](subject)
 
-		return nextValue > accValue ? curr : acc
+		const currValue = objOfFuncs[curr](subject)
+
+		return currValue > accValue ? curr : acc
 	}, accStart)
 
 	return output
