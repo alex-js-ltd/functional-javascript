@@ -3,7 +3,7 @@
 
 // Challenge 7
 
-const delay = <Args extends unknown[]>(
+export const delay = <Args extends unknown[]>(
 	func: (...args: Args) => void,
 	wait: number,
 	...args: Args
