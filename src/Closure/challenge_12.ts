@@ -55,8 +55,24 @@ export const blackjack = (array: number[]) => {
 	return (x: number, y: number) => {
 		let count = 0
 
+		const sum = array[0] + x + y
+
+		const bust = sum > 21 ? true : false
+
 		return () => {
-			if (count === 0) return x + y
+			count++
+
+			if (count === 1) {
+				return x + y
+			}
+
+			if (count === 2) {
+				return bust ? 'bust' : sum
+			}
+
+			if (bust) {
+				return 'you are done!'
+			}
 		}
 	}
 }
