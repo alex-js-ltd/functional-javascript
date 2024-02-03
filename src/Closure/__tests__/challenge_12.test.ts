@@ -9,11 +9,11 @@ test('blackjack', () => {
 
 	// /*** PLAYER 1 ***/
 	const i_like_to_live_dangerously = deal(4, 5)
-	console.log(i_like_to_live_dangerously()) // should log: 9
-	console.log(i_like_to_live_dangerously()) // should log: 11
-	console.log(i_like_to_live_dangerously()) // should log: 17
-	console.log(i_like_to_live_dangerously()) // should log: 18
-	console.log(i_like_to_live_dangerously()) // should log: 'bust'
-	console.log(i_like_to_live_dangerously()) // should log: 'you are done!'
-	console.log(i_like_to_live_dangerously()) // should log: 'you are done!'
+	expect(i_like_to_live_dangerously()).toEqual(9) // should log: 9
+	expect(i_like_to_live_dangerously()).toEqual(11) // should log: 11
+	expect(i_like_to_live_dangerously()).toEqual(17) // should log: 17
+	expect(i_like_to_live_dangerously()).toEqual(18) // should log: 18
+	expect(i_like_to_live_dangerously()).toEqual('bust') // should log: 'bust'
+	expect(i_like_to_live_dangerously()).toEqual('you are done!') // should log: 'you are done!'
+	expect(i_like_to_live_dangerously()).toEqual('you are done!') // should log: 'you are done!'
 })

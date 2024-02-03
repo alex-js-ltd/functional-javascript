@@ -53,8 +53,10 @@
 
 export const blackjack = (array: number[]) => {
 	return (x: number, y: number) => {
+		let count = 0
+
 		return () => {
-			return
+			if (count === 0) return x + y
 		}
 	}
 }
