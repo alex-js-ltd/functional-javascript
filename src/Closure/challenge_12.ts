@@ -52,13 +52,10 @@
 // console.log(i_ALSO_like_to_live_dangerously()); // should log: 'you are done!
 
 export const blackjack = (array: number[]) => {
+	let count = 0
+
 	return (x: number, y: number) => {
-		let count = 0
-
-		const sum = array[0] + x + y
-
-		const bust = sum > 21 ? true : false
-
+		let sum = 0
 		return () => {
 			count++
 
@@ -67,11 +64,13 @@ export const blackjack = (array: number[]) => {
 			}
 
 			if (count === 2) {
-				return bust ? 'bust' : sum
+				sum = x + y + array[count - 2]
+				return sum
 			}
 
-			if (bust) {
-				return 'you are done!'
+			if (count > 2) {
+				sum = sum + array[count - 2]
+				return sum
 			}
 		}
 	}
