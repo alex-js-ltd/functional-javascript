@@ -52,12 +52,12 @@
 // console.log(i_ALSO_like_to_live_dangerously()); // should log: 'you are done!
 
 export const blackjack = (array: number[]) => {
-	// let cardNum = 0;
-	const dealer = (num1: number, num2: number) => {
+	return (num1: number, num2: number) => {
 		let first = true
 		let bust = false
 		let sum = num1 + num2
-		const player = () => {
+
+		return () => {
 			if (first) {
 				first = false
 				return sum
@@ -72,7 +72,5 @@ export const blackjack = (array: number[]) => {
 				return 'bust'
 			}
 		}
-		return player
 	}
-	return dealer
 }
