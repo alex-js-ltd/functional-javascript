@@ -16,4 +16,13 @@ test('blackjack', () => {
 	expect(i_like_to_live_dangerously()).toEqual('bust') // should log: 'bust'
 	expect(i_like_to_live_dangerously()).toEqual('you are done!') // should log: 'you are done!'
 	expect(i_like_to_live_dangerously()).toEqual('you are done!') // should log: 'you are done!'
+
+	// /*** PLAYER 2 ***/
+	const i_TOO_like_to_live_dangerously = deal(2, 2)
+	expect(i_TOO_like_to_live_dangerously()).toEqual(4) // should log: 4
+	expect(i_TOO_like_to_live_dangerously()).toEqual(15) // should log: 15
+	expect(i_TOO_like_to_live_dangerously()).toEqual(19) // should log: 19
+	expect(i_TOO_like_to_live_dangerously()).toEqual('bust') // should log: 'bust'
+	expect(i_TOO_like_to_live_dangerously()).toEqual('you are done!') // should log: 'you are done!
+	expect(i_TOO_like_to_live_dangerously()).toEqual('you are done!') // should log: 'you are done!
 })
