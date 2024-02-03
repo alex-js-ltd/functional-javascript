@@ -64,7 +64,7 @@ export const blackjack = (array: number[]) => {
 			}
 			if (bust) return 'you are done!'
 			if (sum + array[0] <= 21) {
-				sum += array.shift()
+				sum += array.shift() || 0
 				return sum
 			} else {
 				array.shift()
