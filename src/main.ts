@@ -1,4 +1,4 @@
 console.log('npm run test 🚀')
-import { average } from './Closure/challenge_9'
+import { curriedAddThreeNums } from './Extension_Challenges/challenge_5'
 
-export { average }
+export { curriedAddThreeNums }
