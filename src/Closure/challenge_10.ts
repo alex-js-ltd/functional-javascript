@@ -9,8 +9,9 @@
 
 export const makeFuncTester = (arrOfTests: string[][]) => {
 	return (callback: (str: string) => string): boolean => {
-		const output = arrOfTests.reduce((_acc, curr) => {
-			return callback(curr[0]) === curr[1] ? true : false
+		const output = arrOfTests.reduce((acc, curr) => {
+			if (acc) return callback(curr[0]) === curr[1]
+			return acc
 		}, true)
 
 		return output
