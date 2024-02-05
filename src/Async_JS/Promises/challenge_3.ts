@@ -5,6 +5,6 @@ export const promise = new Promise((_res, rej) => {
 	rej('Rejected!')
 })
 
-//export const promise = Promise.reject('Rejected!')
-
 promise.catch(err => console.log(err))
+
+//export const promise = Promise.reject('Rejected!')
