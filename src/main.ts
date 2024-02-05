@@ -1,4 +1,4 @@
 console.log('npm run test 🚀')
-import { firstPromise } from './Async_JS/Promises/challenge_6'
+import { getAllData } from './Async_JS/Promises/challenge_7'
 
-export { firstPromise }
+export { getAllData }
