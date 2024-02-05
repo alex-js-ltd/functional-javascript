@@ -7,4 +7,4 @@ export const promise = new Promise((res, _rej) => {
 	}, 1000)
 })
 
-// promise.then(res => console.log(res))
+promise.then(res => console.log(res))

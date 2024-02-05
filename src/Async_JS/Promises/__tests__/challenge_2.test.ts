@@ -13,8 +13,7 @@ afterEach(() => {
 test('promise', async () => {
 	const logSpy = vi.spyOn(global.console, 'log')
 
-	const res = await promise
-	console.log(res)
+	await expect(promise).resolves.toBe('Resolved!')
 
 	vi.advanceTimersByTime(1000)
 
