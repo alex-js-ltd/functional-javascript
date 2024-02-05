@@ -1,7 +1,7 @@
 import { expect, test, vi } from 'vitest'
 import { promise } from '../challenge_4'
 
-test('challenge_4', async () => {
+test('promise', async () => {
 	const logSpy = vi.spyOn(global.console, 'log')
 
 	await expect(promise).resolves.toBe('Promise has been resolved!')
